@@ -17,41 +17,48 @@ function M.get()
 
 	local c = colors
 
+	-- Get config to check for transparency
+	local config = require("oc.config").options
+
+	-- Transparent background helper
+	local bg_element = config.transparent and "NONE" or c.backgroundElement
+	local bg_panel = config.transparent and "NONE" or c.backgroundPanel
+
 	return {
 		normal = {
 			a = { bg = c.lualine.normal, fg = c.background, gui = "bold" },
-			b = { bg = c.backgroundElement, fg = c.text },
-			c = { bg = c.backgroundPanel, fg = c.textMuted },
+			b = { bg = bg_element, fg = c.text },
+			c = { bg = bg_panel, fg = c.textMuted },
 		},
 		insert = {
 			a = { bg = c.lualine.insert, fg = c.background, gui = "bold" },
-			b = { bg = c.backgroundElement, fg = c.text },
-			c = { bg = c.backgroundPanel, fg = c.textMuted },
+			b = { bg = bg_element, fg = c.text },
+			c = { bg = bg_panel, fg = c.textMuted },
 		},
 		visual = {
 			a = { bg = c.lualine.visual, fg = c.background, gui = "bold" },
-			b = { bg = c.backgroundElement, fg = c.text },
-			c = { bg = c.backgroundPanel, fg = c.textMuted },
+			b = { bg = bg_element, fg = c.text },
+			c = { bg = bg_panel, fg = c.textMuted },
 		},
 		replace = {
 			a = { bg = c.lualine.replace, fg = c.background, gui = "bold" },
-			b = { bg = c.backgroundElement, fg = c.text },
-			c = { bg = c.backgroundPanel, fg = c.textMuted },
+			b = { bg = bg_element, fg = c.text },
+			c = { bg = bg_panel, fg = c.textMuted },
 		},
 		command = {
 			a = { bg = c.lualine.command, fg = c.background, gui = "bold" },
-			b = { bg = c.backgroundElement, fg = c.text },
-			c = { bg = c.backgroundPanel, fg = c.textMuted },
+			b = { bg = bg_element, fg = c.text },
+			c = { bg = bg_panel, fg = c.textMuted },
 		},
 		terminal = {
 			a = { bg = c.lualine.terminal, fg = c.background, gui = "bold" },
-			b = { bg = c.backgroundElement, fg = c.text },
-			c = { bg = c.backgroundPanel, fg = c.textMuted },
+			b = { bg = bg_element, fg = c.text },
+			c = { bg = bg_panel, fg = c.textMuted },
 		},
 		inactive = {
-			a = { bg = c.backgroundPanel, fg = c.textMuted },
-			b = { bg = c.backgroundPanel, fg = c.textMuted },
-			c = { bg = c.backgroundPanel, fg = c.textMuted },
+			a = { bg = bg_panel, fg = c.textMuted },
+			b = { bg = bg_panel, fg = c.textMuted },
+			c = { bg = bg_panel, fg = c.textMuted },
 		},
 	}
 end
