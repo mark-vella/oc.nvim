@@ -124,6 +124,8 @@ require("lualine").setup({
 })
 ```
 
+**Note:** The lualine theme is not automatically applied - you need to manually configure lualine to use the `oc` theme.
+
 ## Contributing
 
 Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
