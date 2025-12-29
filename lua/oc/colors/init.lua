@@ -68,6 +68,34 @@ M.dark = function()
 		syntaxType = "#e5c07b",
 		syntaxOperator = "#56b6c2",
 		syntaxPunctuation = "#eeeeee",
+		-- Terminal colors
+		terminal = {
+			black = "#0a0a0a",
+			red = "#e06c75",
+			green = "#7fd88f",
+			yellow = "#f5a742",
+			blue = "#5c9cf5",
+			magenta = "#9d7cd8",
+			cyan = "#56b6c2",
+			white = "#eeeeee",
+			bright_black = "#808080",
+			bright_red = "#e06c75",
+			bright_green = "#7fd88f",
+			bright_yellow = "#f5a742",
+			bright_blue = "#5c9cf5",
+			bright_magenta = "#9d7cd8",
+			bright_cyan = "#56b6c2",
+			bright_white = "#ffffff",
+		},
+		-- Lualine mode colors
+		lualine = {
+			normal = "#fab283",
+			insert = "#5c9cf5",
+			visual = "#9d7cd8",
+			replace = "#e06c75",
+			command = "#f5a742",
+			terminal = "#7fd88f",
+		},
 	}
 end
 
@@ -123,6 +151,34 @@ M.light = function()
 		syntaxType = "#b0851f",
 		syntaxOperator = "#318795",
 		syntaxPunctuation = "#1a1a1a",
+		-- Terminal colors
+		terminal = {
+			black = "#1a1a1a",
+			red = "#d1383d",
+			green = "#3d9a57",
+			yellow = "#d68c27",
+			blue = "#3b7dd8",
+			magenta = "#7b5bb6",
+			cyan = "#318795",
+			white = "#fafafa",
+			bright_black = "#8a8a8a",
+			bright_red = "#d1383d",
+			bright_green = "#3d9a57",
+			bright_yellow = "#d68c27",
+			bright_blue = "#3b7dd8",
+			bright_magenta = "#7b5bb6",
+			bright_cyan = "#318795",
+			bright_white = "#ffffff",
+		},
+		-- Lualine mode colors
+		lualine = {
+			normal = "#d68c27",
+			insert = "#3b7dd8",
+			visual = "#7b5bb6",
+			replace = "#d1383d",
+			command = "#d68c27",
+			terminal = "#3d9a57",
+		},
 	}
 end
 
