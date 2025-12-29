@@ -17,12 +17,13 @@ function M.get()
 
 	local c = colors
 
-	-- Get config to check for transparency
+	-- Get config and check for transparency
 	local config = require("oc.config").options
+	local transparent = config.transparent or vim.g.transparent_enabled
 
 	-- Transparent background helper
-	local bg_element = config.transparent and "NONE" or c.backgroundElement
-	local bg_panel = config.transparent and "NONE" or c.backgroundPanel
+	local bg_element = transparent and "NONE" or c.backgroundElement
+	local bg_panel = transparent and "NONE" or c.backgroundPanel
 
 	return {
 		normal = {

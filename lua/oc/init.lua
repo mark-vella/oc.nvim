@@ -2,6 +2,16 @@ local M = {}
 
 function M.setup(opts)
 	require("oc.config").setup(opts or {})
+
+	-- Reload lualine when transparency is toggled via transparent.nvim
+	vim.api.nvim_create_autocmd("User", {
+		pattern = "TransparentClear",
+		callback = function()
+			if pcall(require, "lualine") then
+				require("lualine").setup({ theme = "oc" })
+			end
+		end,
+	})
 end
 
 --- Set terminal colors from palette
