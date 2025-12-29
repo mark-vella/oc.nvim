@@ -2,6 +2,11 @@
 
 OpenCode theme for Neovim - a dark and light colorscheme inspired by the default theme in [OpenCode](https://opencode.ai).
 
+## Screenshots
+
+![Dark theme preview showing syntax highlighting in Neovim](https://github.com/mark-vella/oc.nvim/blob/m/assets/dark.png?raw=true)
+![Light theme preview showing syntax highlighting in Neovim](https://github.com/mark-vella/oc.nvim/blob/m/assets/light.png?raw=true)
+
 ## Features
 
 - Dark and light themes
