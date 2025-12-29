@@ -11,15 +11,36 @@ OpenCode theme for Neovim - a dark and light colorscheme inspired by the default
 
 - Dark and light themes
 - Respects `vim.o.background` setting
+- Transparent background support
+- Terminal colors (16-color palette)
 - Treesitter support
 - LSP support
+- Lualine theme
 - Plugin integrations:
   - nvim-cmp
   - GitSigns
   - NvimTree
+  - Neo-tree
   - Telescope
   - Which-key
-  - And more...
+  - Indent Blankline
+  - Dashboard / Alpha
+  - Lazy
+  - Mason
+  - Notify
+  - Noice
+  - Mini.nvim
+  - Trouble
+  - Navic
+  - BufferLine
+  - Lualine
+  - Leap
+  - Flash
+  - Hop
+  - Illuminate
+  - Fidget
+  - Headlines
+  - RenderMarkdown
 
 ## Installation
 
@@ -90,6 +111,29 @@ require("oc").setup({
   },
 })
 ```
+
+## Lualine Integration
+
+oc.nvim includes a dedicated lualine theme with mode colors inspired by OpenCode's agent system:
+
+```lua
+require("lualine").setup({
+  options = {
+    theme = "oc",
+  },
+})
+```
+
+**Note:** The lualine theme is not automatically applied - you need to manually configure lualine to use the `oc` theme.
+
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
+
+- Adding plugin support
+- Code style requirements
+- Testing changes
+- Submitting pull requests
 
 ## Credits
 

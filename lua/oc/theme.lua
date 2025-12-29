@@ -7,22 +7,26 @@ function M.load(style)
 	local config = require("oc.config").options
 	local highlights = {}
 
+	-- Transparent background helper
+	local bg = config.transparent and "NONE" or colors.background
+	local bg_panel = config.transparent and "NONE" or colors.backgroundPanel
+
 	-- Editor UI
-	highlights.Normal = { fg = colors.text, bg = colors.background }
-	highlights.NormalFloat = { fg = colors.text, bg = colors.backgroundPanel }
-	highlights.NormalSB = { fg = colors.text, bg = colors.backgroundPanel }
-	highlights.NormalNC = { fg = colors.text, bg = colors.background }
-	highlights.SignColumn = { fg = colors.textMuted, bg = colors.background }
-	highlights.SignColumnSB = { fg = colors.textMuted, bg = colors.backgroundPanel }
-	highlights.EndOfBuffer = { fg = colors.background }
+	highlights.Normal = { fg = colors.text, bg = bg }
+	highlights.NormalFloat = { fg = colors.text, bg = bg_panel }
+	highlights.NormalSB = { fg = colors.text, bg = bg_panel }
+	highlights.NormalNC = { fg = colors.text, bg = bg }
+	highlights.SignColumn = { fg = colors.textMuted, bg = bg }
+	highlights.SignColumnSB = { fg = colors.textMuted, bg = bg_panel }
+	highlights.EndOfBuffer = { fg = bg }
 	highlights.Cursor = { fg = colors.background, bg = colors.text }
 	highlights.lCursor = { fg = colors.background, bg = colors.text }
 	highlights.CursorIM = { fg = colors.background, bg = colors.text }
 	highlights.CursorLine = { bg = colors.backgroundElement }
-	highlights.CursorLineNr = { fg = colors.primary, bold = true }
+	highlights.CursorLineNr = { fg = colors.primary, bg = config.transparent and "NONE" or nil, bold = true }
 	highlights.CursorColumn = { bg = colors.backgroundElement }
 	highlights.ColorColumn = { bg = colors.backgroundElement }
-	highlights.LineNr = { fg = colors.textMuted }
+	highlights.LineNr = { fg = colors.textMuted, bg = bg }
 	highlights.Visual = { bg = colors.borderActive }
 	highlights.VisualNOS = { bg = colors.borderActive }
 	highlights.Search = { fg = colors.background, bg = colors.warning }
@@ -44,7 +48,7 @@ function M.load(style)
 	highlights.SpecialKey = { fg = colors.borderSubtle }
 	highlights.Whitespace = { fg = colors.borderSubtle }
 	highlights.Folded = { fg = colors.textMuted, bg = colors.backgroundElement }
-	highlights.FoldColumn = { fg = colors.textMuted, bg = colors.background }
+	highlights.FoldColumn = { fg = colors.textMuted, bg = bg }
 	highlights.DiffAdd = { bg = colors.diffAddedBg }
 	highlights.DiffChange = { bg = colors.diffContextBg }
 	highlights.DiffDelete = { bg = colors.diffRemovedBg }
@@ -309,8 +313,8 @@ function M.load(style)
 	highlights.GitSignsCurrentLineBlame = { fg = colors.textMuted }
 
 	-- NvimTree
-	highlights.NvimTreeNormal = { fg = colors.text, bg = colors.backgroundPanel }
-	highlights.NvimTreeNormalNC = { fg = colors.text, bg = colors.backgroundPanel }
+	highlights.NvimTreeNormal = { fg = colors.text, bg = bg_panel }
+	highlights.NvimTreeNormalNC = { fg = colors.text, bg = bg_panel }
 	highlights.NvimTreeRootFolder = { fg = colors.primary, bold = true }
 	highlights.NvimTreeFolderName = { fg = colors.secondary }
 	highlights.NvimTreeFolderIcon = { fg = colors.secondary }
@@ -329,8 +333,8 @@ function M.load(style)
 	highlights.NvimTreeWindowPicker = { fg = colors.background, bg = colors.primary, bold = true }
 
 	-- Neo-tree
-	highlights.NeoTreeNormal = { fg = colors.text, bg = colors.backgroundPanel }
-	highlights.NeoTreeNormalNC = { fg = colors.text, bg = colors.backgroundPanel }
+	highlights.NeoTreeNormal = { fg = colors.text, bg = bg_panel }
+	highlights.NeoTreeNormalNC = { fg = colors.text, bg = bg_panel }
 	highlights.NeoTreeRootName = { fg = colors.primary, bold = true }
 	highlights.NeoTreeDirectoryName = { fg = colors.secondary }
 	highlights.NeoTreeDirectoryIcon = { fg = colors.secondary }
