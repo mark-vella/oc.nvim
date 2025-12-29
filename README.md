@@ -22,7 +22,7 @@ OpenCode theme for Neovim - a dark and light colorscheme inspired by the default
 
 ```lua
 {
-  "your-username/oc.nvim",
+  "mark-vella/oc.nvim",
   lazy = false,
   priority = 1000,
   config = function()
@@ -36,7 +36,7 @@ OpenCode theme for Neovim - a dark and light colorscheme inspired by the default
 
 ```lua
 use {
-  "your-username/oc.nvim",
+  "mark-vella/oc.nvim",
   config = function()
     require("oc").setup({})
     vim.cmd.colorscheme("oc")
