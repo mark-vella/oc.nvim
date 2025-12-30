@@ -71,6 +71,51 @@ function M.load(style)
 	highlights.TabLineSel = { fg = colors.text, bg = colors.background }
 	highlights.StatusLine = { fg = colors.text, bg = colors.backgroundPanel }
 	highlights.StatusLineNC = { fg = colors.textMuted, bg = colors.backgroundPanel }
+
+	vim.api.nvim_create_autocmd("ModeChanged", {
+		pattern = "*:*",
+		callback = function(event)
+			local mode = event.match:match(":(%w+)")
+			if not mode then
+				return
+			end
+
+			local mode_colors = {
+				n = colors.lualine.normal,
+				no = colors.lualine.normal,
+				nov = colors.lualine.normal,
+				nom = colors.lualine.normal,
+				ni = colors.lualine.normal,
+				i = colors.lualine.insert,
+				ic = colors.lualine.insert,
+				ix = colors.lualine.insert,
+				v = colors.lualine.visual,
+				vs = colors.lualine.visual,
+				V = colors.lualine.visual,
+				Vs = colors.lualine.visual,
+				["\22"] = colors.lualine.visual,
+				["\22s"] = colors.lualine.visual,
+				r = colors.lualine.replace,
+				rm = colors.lualine.replace,
+				["r?"] = colors.lualine.replace,
+				rl = colors.lualine.replace,
+				rv = colors.lualine.replace,
+				c = colors.lualine.command,
+				cf = colors.lualine.command,
+				cr = colors.lualine.command,
+				["!"] = colors.lualine.terminal,
+				t = colors.lualine.terminal,
+			}
+
+			local color = mode_colors[mode] or colors.lualine.normal
+			vim.api.nvim_set_hl(0, "StatusLine", {
+				fg = colors.background,
+				bg = color,
+				bold = true,
+			})
+		end,
+	})
+
 	highlights.WinBar = { fg = colors.text, bg = colors.background }
 	highlights.WinBarNC = { fg = colors.textMuted, bg = colors.background }
 	highlights.WinSeparator = { fg = colors.border }
